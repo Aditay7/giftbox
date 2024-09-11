@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.bg-img{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt6V3SA-J0y6kFnOiCGo08kyOookW2e8Ej7A&s);
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.gift-box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 200px;
+}
+
+.gift-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.box-image {
+    width: 200px;
+    height: 188px;
+}
+
+.lid {
+    position: absolute;
+    top: -38px;
+    left: 0;
+    width: 200px; /* Adjust width to match the box */
+    height: 50px; /* Adjust based on lid size */
+    transition: transform 1s ease-in-out, top 1s ease-in-out; /* Smooth transition */
+}
+
+.lid-image {
+    width: 200px;
+    height: auto;
+}
+
+.opened .lid {
+    transform: rotateX(-90deg); /* Lid opens smoothly */
+    top: -60px; /* Move the lid upwards smoothly (adjust value for your preference) */
+}
+
+.open-button {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 15px 80px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.open-button:hover {
+    background-color: #ff0000;
+}
+
+/* Initially hide birthday message */
+.birthday-message {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 0s linear 1s; /* Fade-in with a delay */
+    margin-top: 20px;
+    text-align: center;
+    font-size: 32px;
+    position: relative;
+    top: -202px;
+}
+
+/* Show message after box opens */
+.opened ~ .birthday-message {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
